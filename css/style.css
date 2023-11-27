@@ -43,27 +43,36 @@
     padding: 0px 30px 0px 30px;
 }
 .books-section .book {
-    width: 100%;
+    width: 150px;
+    height: 200px;
     transition: .5s;
     cursor: pointer;
-    display: flex;
-}
-.books-section .book .div-info{
-    margin-left: 10px;
-    width: 70%;
-}
-
-.books-section .book:hover img {
-    padding: 0 20px;
-}
-
-.books-section .book img {
-    height: 200px;
+    background: no-repeat;
+    background-size: 150px 100%;
+    margin: 0 auto;
     border-radius: 10px;
-    transition: .2s;
-    width: 30%;
-
+    box-shadow: -10px 10px 10px rgba(0  , 0, 0, 0.3);
+    text-align: right;
+    transition: .5s;
 }
+
+.books-section .book .div-info{
+    width: calc(100% - 170px);
+    margin-left: 150px;
+    height: calc(100% - 20px);
+    opacity: 0;
+    border-radius: 0 10px 10px 0;
+    padding: 10px;
+    transition: .5s;
+    color: white;
+}
+.books-section .book:hover {
+    width: 100%;
+}
+.books-section .book:hover .div-info{
+    opacity: 100%;
+}
+
 .books-section .book .description {
     font-size: 0.7em;
 }
@@ -74,7 +83,7 @@
 
 .product{
     width: calc(50% - 40px);
-    margin: 0 auto;
+    margin: 20px auto;
     
     padding: 100px 0px 0px 20px;
     display: flex;
@@ -96,6 +105,8 @@
 }
 .product img {
     width: 50%;
+    border-radius: 10px;
+    box-shadow: -10px 10px 10px rgba(0,0,0,0.3);
 }
 .product div {
     width: calc(50% - 20px);
@@ -123,6 +134,12 @@
     }
     .product .div-info{
         width: calc(100% - 40px);
+    }
+    .books-section .book{
+        width: 100%;
+    }
+    .books-section .book .div-info{
+        opacity: 100%;
     }
 }
 @media (min-width: 800px) {
