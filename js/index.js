@@ -4,6 +4,7 @@ const app = {
 
 function Public_Book(book){
     app.books.appendChild(book)
+    
 }
 
 
@@ -21,23 +22,29 @@ function CreateBookElement(src, description, autor, sale, linkdoproduto){
     book_description.className = 'description'
     book_description.innerText = description
 
-    book_img.className = 'imagem'
     book_img.src = src
-
+    book_img.onload = (e) =>{
+        const rgb = CorPredominante(e.target)
+        book.querySelector(".div-info").style = "background:" + rgb
+        book.dataset.color = rgb
+    }
+    
     book_sale.className = "sale"
     book_sale.innerText = sale
 
-    book.appendChild(book_img)
     book_div.appendChild(book_autor)
     book_div.appendChild(book_description)
     book_div.appendChild(book_sale)
     book.appendChild(book_div)
-
+    book.style = "background-image: url('" + src + "')"
+    
+    
     book_div.className = 'div-info'
     book.className = 'book'
+    
 
     book.onclick = () =>{
-        window.open("./produto.html?id=" + linkdoproduto);
+        window.open("./produto.html?id=" + linkdoproduto +"&color=" + book.dataset.color);
     }
 
     return book
