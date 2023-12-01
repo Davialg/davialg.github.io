@@ -50,20 +50,21 @@ function CreateBookElement(src, description, autor, sale, linkdoproduto){
     return book
 }
 
-
-function RenderData() {
+async function RenderData2(){
+    const res = await fetch("js/out.json");
+    const data = await res.json();
     let i = 0
-    for(const livro of livros)
+    for(const livroN in data.tablesRef["livros"])
     {
         
-        Public_Book(CreateBookElement(livro.src,livro.descprition,livro.autor,livro.sale, i))
-        i+=1
+        Public_Book(CreateBookElement(data.tablesRef["livros"][livroN].src,data.tablesRef["livros"][livroN].descprition,data.tablesRef["livros"][livroN].autor,data.tablesRef["livros"][livroN].sale, livroN))
+        i+=1      
     }
 }
 
 
 function GetLivros() {
     app.books = document.querySelector(".books-section")
-    RenderData()
+    RenderData2()
 }
 GetLivros()
