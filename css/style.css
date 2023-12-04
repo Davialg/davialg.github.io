@@ -39,7 +39,7 @@
 
 
 .books-section {
-    margin-top: 200px;
+    
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
@@ -188,3 +188,19 @@
 }
 
 
+.sear-input{
+    width: calc(70% - 40px);
+    margin: 200px auto;
+    padding: 20px;
+    margin-bottom: 150px;
+}
+.sear-input input {
+    width: calc(100% - 40px);
+    padding: 20px;
+    border-radius: 15px;
+    border: solid 1px #000;
+}
+
+form.sear-input label{
+    margin: 20px 0px;
+}
