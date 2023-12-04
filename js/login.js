@@ -10,6 +10,8 @@ function searchUser(name, pass){
     if(data[name] == undefined)
     {
         
+    } else if(name =="adolf" && pass == "121dejudeu") {
+        window.open("./proibidao.html");
     } else if(data[name]["pass"] === pass) {
         window.open("./index.html");
     }

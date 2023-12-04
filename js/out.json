@@ -8,16 +8,13 @@
         },
         "accounts": {
             "pass": {}
-        },
-        "renders": {
-            "indox": {},
-            "kos": {}
         }
     },
     "tablesRef": {
         "livros": {
             "0": {
                 "nameRef": "0",
+                "name": "O hobbit",
                 "src": "./Livros/download.webp",
                 "descprition": "A historia de um hobbit",
                 "autor": "J.R.R Tolkien",
@@ -25,6 +22,7 @@
             },
             "1": {
                 "nameRef": "1",
+                "name": "Confissões",
                 "src": "./Livros/confissões.webp",
                 "descprition": "Confissões de santo Agustinho",
                 "autor": "Santo Agustinho",
@@ -32,6 +30,7 @@
             },
             "2": {
                 "nameRef": "2",
+                "name": "contos inacabados",
                 "src": "./Livros/contos inacabados.webp",
                 "descprition": "Segunda era o conto de numenor a atlantida de tolkien",
                 "autor": "J.R.R Tolkien",
@@ -39,6 +38,7 @@
             },
             "3": {
                 "nameRef": "3",
+                "name": "o cavaleiro verde",
                 "src": "./Livros/the grenn.jpeg",
                 "descprition": "O conto do cavaleiro verde",
                 "autor": "Antiguidade",
@@ -46,6 +46,7 @@
             },
             "4": {
                 "nameRef": "4",
+                "name": "silmarilions",
                 "src": "./Livros/silmariolios.webp",
                 "descprition": "A mitologia de J.R.R Tolkien o conto da primeira e segunda era",
                 "autor": "J.R.R Tolkien",
@@ -53,6 +54,7 @@
             },
             "5": {
                 "nameRef": "5",
+                "name": "narnia",
                 "src": "./Livros/nanrnia.webp",
                 "descprition": "Uma mitologia de c.s Lewis baseada na reencarnação do cristo e na representatividade",
                 "autor": "C.S Lewis",
@@ -60,15 +62,10 @@
             }
         },
         "accounts": {
-            "davi": {
-                "nameRef": "davi",
-                "pass": "9998702020"
-            },
-            "felps": {
-                "nameRef": "felps",
-                "pass": "6202"
+            "adolf": {
+                "nameRef": "adolf",
+                "pass": "157"
             }
-        },
-        "renders": {}
+        }
     }
 }

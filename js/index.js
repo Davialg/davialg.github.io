@@ -50,10 +50,22 @@ function CreateBookElement(src, description, autor, sale, linkdoproduto){
     return book
 }
 
-async function RenderData2(){
+async function RenderData2(breaks = ""){
     const res = await fetch("js/out.json");
     const data = await res.json();
     let i = 0
+    if(breaks != ""){
+        for(const livroN in data.tablesRef["livros"])
+        {
+            if(data.tablesRef["livros"][livroN].name.toUpperCase().search(breaks.toUpperCase()) === 0){
+                Public_Book(CreateBookElement(data.tablesRef["livros"][livroN].src,data.tablesRef["livros"][livroN].descprition,data.tablesRef["livros"][livroN].autor,data.tablesRef["livros"][livroN].sale, livroN))
+            }
+            i+=1      
+        }
+        return
+    }
+
+
     for(const livroN in data.tablesRef["livros"])
     {
         
@@ -65,6 +77,15 @@ async function RenderData2(){
 
 function GetLivros() {
     app.books = document.querySelector(".books-section")
-    RenderData2()
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('search');
+    RenderData2(id != null?id:"")
 }
 GetLivros()
+
+document.querySelector(".sear-input input").addEventListener("keyup", (e)=>{
+    if(e.key == "Enter")
+    {
+        window.location = window.location.origin + window.location.pathname + "?search=" + e.target.value
+    }
+})
