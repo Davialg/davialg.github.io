@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/pp.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="sombra"></div>
+    <p id="letters" class="text">Muito Obrigado por assistir ate aqui agora!!!
+        <button id="in">Click Aqui</button>
+
+
+    </p>
+
+<script>
+
+        function FirstSlide(text, doc, call = null){
+            let newText = ""
+            let i = 0
+            const inter = setInterval(()=>{
+                if(i  >= text.length){
+                    clearInterval(inter)
+                    if(call != null){
+                        setTimeout(()=>{
+
+                            doc.innerText = ""
+                            call()
+                        }, 2000)
+                    }
+                } else {
+                    newText += text[i]
+                    doc.innerText = newText
+                    i += 1
+                }
+                
+            }, 50)
+        }
+        function EndSlide(){
+            document.querySelector(".sombra").className = "sombra end" 
+        }
+        document.querySelector("#in").onclick = ()=>{
+            (new Audio('./pp.mp3')).play()
+
+            document.querySelector("p").innerHTML = ""
+            
+            const urls = [
+            'url("./Livros/1.jpg")',
+                'url("./Livros/2.jpg")',
+                'url("./Livros/3.jpg")',
+                'url("./Livros/4.jpg")',
+                'url("./Livros/6.jpg")',
+                'url("./Livros/7.jpg")',
+                'url("./Livros/8.jpg")',
+                'url("./Livros/9.jpg")',
+                'url("./Livros/4.jpg")',
+                'url("./Livros/3.jpg")',
+                'url("./Livros/6.jpg")',
+                'url("./Livros/7.jpg")',
+                'url("./Livros/8.jpg")',
+                'url("./Livros/9.jpg")',
+                'url("./Livros/1.jpg")',
+                'url("./Livros/2.jpg")',
+                'url("./Livros/3.jpg")',
+                'url("./Livros/4.jpg")',
+                'url("./Livros/6.jpg")',
+                'url("./Livros/7.jpg")',
+                'url("./Livros/8.jpg")',
+                'url("./Livros/9.jpg")',
+                'url("./Livros/3.jpg")',
+                'url("./Livros/7.jpg")',
+                'url("./Livros/2.jpg")',
+                'url("./Livros/8.jpg")',
+                'url("./Livros/9.jpg")',
+                'url("./Livros/7.jpg")',
+                'url("./Livros/6.jpg")',
+                'url("./Livros/2.jpg")',
+                'url("./Livros/4.jpg")',
+                'url("./Livros/3.jpg")',
+                'url("./Livros/1.jpg")',
+                'url("./Livros/7.jpg")',
+                'url("./Livros/8.jpg")',
+                'url("./Livros/2.jpg")',
+                'url("./Livros/4.jpg")',
+                'url("./Livros/1.jpg")',
+                'url("./Livros/9.jpg")',
+                'url("./Livros/8.jpg")',
+                'url("./Livros/7.jpg")',
+                'url("./Livros/6.jpg")',
+                'url("./Livros/4.jpg")',
+                'url("./Livros/3.jpg")',
+                'url("./Livros/2.jpg")',
+                'url("./Livros/1.jpg")',
+                'url("./Livros/8.jpg")',
+                'url("./Livros/9.jpg")',
+                'url("./Livros/4.jpg")',
+                'url("./Livros/3.jpg")',
+                'url("./Livros/6.jpg")',
+                'url("./Livros/5.jpg")',
+                
+               
+                
+            ] 
+            let i = 0
+            const kk = setInterval(()=>{
+                if(i >= urls.length){
+                    clearInterval(kk)
+                } else {
+                    document.querySelector("body").style.backgroundImage = urls[i]
+                    i+=1
+                }
+            }, 50)
+            setTimeout(()=>{
+                document.querySelector("body").style.backgroundImage = 'url("./Livros/5.jpg")'
+                const s = document.querySelector("p")
+
+                FirstSlide("Projeto Catalogo de produtos, Dirigido por Davi", s,()=>{
+                    FirstSlide("Escrito por Felps.", s, ()=>{
+
+                        FirstSlide("Agracimento Especial a Deus. E misericordia a todos os povo que pereceram no Holodomor, que Deus estaja com todos eles, e que eles estajam com deus Amem !", s, ()=>{
+                            EndSlide()
+                        })
+                    })
+                })
+            }, 3000)
+        }
+    </script>
+</body>
+</html>
